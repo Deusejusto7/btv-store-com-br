@@ -95,9 +95,14 @@ export type Database = {
           created_at: string
           customer_id: string
           id: string
+          mp_payment_id: string | null
+          mp_preference_id: string | null
           notes: string | null
           order_number: number
+          paid_at: string | null
           payment_method: string
+          payment_status_detail: string | null
+          secret_code: string | null
           shipping_cents: number
           shipping_cep: string
           shipping_city: string
@@ -116,9 +121,14 @@ export type Database = {
           created_at?: string
           customer_id: string
           id?: string
+          mp_payment_id?: string | null
+          mp_preference_id?: string | null
           notes?: string | null
           order_number?: never
+          paid_at?: string | null
           payment_method?: string
+          payment_status_detail?: string | null
+          secret_code?: string | null
           shipping_cents?: number
           shipping_cep: string
           shipping_city: string
@@ -137,9 +147,14 @@ export type Database = {
           created_at?: string
           customer_id?: string
           id?: string
+          mp_payment_id?: string | null
+          mp_preference_id?: string | null
           notes?: string | null
           order_number?: never
+          paid_at?: string | null
           payment_method?: string
+          payment_status_detail?: string | null
+          secret_code?: string | null
           shipping_cents?: number
           shipping_cep?: string
           shipping_city?: string

@@ -10,33 +10,155 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as GarantiaRouteImport } from './routes/garantia'
+import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
+import { Route as PoliticaDeEntregaRouteImport } from './routes/politica-de-entrega'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
+import { Route as TrocasEDevolucoesRouteImport } from './routes/trocas-e-devolucoes'
+import { Route as PedidoOrderIdRouteImport } from './routes/pedido/$orderId'
+import { Route as ApiPublicMercadopagoWebhookRouteImport } from './routes/api/public/mercadopago/webhook'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GarantiaRoute = GarantiaRouteImport.update({
+  id: '/garantia',
+  path: '/garantia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
+  id: '/politica-de-cookies',
+  path: '/politica-de-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeEntregaRoute = PoliticaDeEntregaRouteImport.update({
+  id: '/politica-de-entrega',
+  path: '/politica-de-entrega',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrocasEDevolucoesRoute = TrocasEDevolucoesRouteImport.update({
+  id: '/trocas-e-devolucoes',
+  path: '/trocas-e-devolucoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PedidoOrderIdRoute = PedidoOrderIdRouteImport.update({
+  id: '/pedido/$orderId',
+  path: '/pedido/$orderId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicMercadopagoWebhookRoute =
+  ApiPublicMercadopagoWebhookRouteImport.update({
+    id: '/api/public/mercadopago/webhook',
+    path: '/api/public/mercadopago/webhook',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/garantia': typeof GarantiaRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-entrega': typeof PoliticaDeEntregaRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
+  '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
+  '/pedido/$orderId': typeof PedidoOrderIdRoute
+  '/api/public/mercadopago/webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/garantia': typeof GarantiaRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-entrega': typeof PoliticaDeEntregaRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
+  '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
+  '/pedido/$orderId': typeof PedidoOrderIdRoute
+  '/api/public/mercadopago/webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/garantia': typeof GarantiaRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-entrega': typeof PoliticaDeEntregaRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
+  '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
+  '/pedido/$orderId': typeof PedidoOrderIdRoute
+  '/api/public/mercadopago/webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/checkout'
+    | '/garantia'
+    | '/politica-de-cookies'
+    | '/politica-de-entrega'
+    | '/politica-de-privacidade'
+    | '/termos-de-uso'
+    | '/trocas-e-devolucoes'
+    | '/pedido/$orderId'
+    | '/api/public/mercadopago/webhook'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/checkout'
+    | '/garantia'
+    | '/politica-de-cookies'
+    | '/politica-de-entrega'
+    | '/politica-de-privacidade'
+    | '/termos-de-uso'
+    | '/trocas-e-devolucoes'
+    | '/pedido/$orderId'
+    | '/api/public/mercadopago/webhook'
+  id:
+    | '__root__'
+    | '/'
+    | '/checkout'
+    | '/garantia'
+    | '/politica-de-cookies'
+    | '/politica-de-entrega'
+    | '/politica-de-privacidade'
+    | '/termos-de-uso'
+    | '/trocas-e-devolucoes'
+    | '/pedido/$orderId'
+    | '/api/public/mercadopago/webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CheckoutRoute: typeof CheckoutRoute
+  GarantiaRoute: typeof GarantiaRoute
+  PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
+  PoliticaDeEntregaRoute: typeof PoliticaDeEntregaRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
+  TrocasEDevolucoesRoute: typeof TrocasEDevolucoesRoute
+  PedidoOrderIdRoute: typeof PedidoOrderIdRoute
+  ApiPublicMercadopagoWebhookRoute: typeof ApiPublicMercadopagoWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +170,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/garantia': {
+      id: '/garantia'
+      path: '/garantia'
+      fullPath: '/garantia'
+      preLoaderRoute: typeof GarantiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-cookies': {
+      id: '/politica-de-cookies'
+      path: '/politica-de-cookies'
+      fullPath: '/politica-de-cookies'
+      preLoaderRoute: typeof PoliticaDeCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-entrega': {
+      id: '/politica-de-entrega'
+      path: '/politica-de-entrega'
+      fullPath: '/politica-de-entrega'
+      preLoaderRoute: typeof PoliticaDeEntregaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trocas-e-devolucoes': {
+      id: '/trocas-e-devolucoes'
+      path: '/trocas-e-devolucoes'
+      fullPath: '/trocas-e-devolucoes'
+      preLoaderRoute: typeof TrocasEDevolucoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pedido/$orderId': {
+      id: '/pedido/$orderId'
+      path: '/pedido/$orderId'
+      fullPath: '/pedido/$orderId'
+      preLoaderRoute: typeof PedidoOrderIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/mercadopago/webhook': {
+      id: '/api/public/mercadopago/webhook'
+      path: '/api/public/mercadopago/webhook'
+      fullPath: '/api/public/mercadopago/webhook'
+      preLoaderRoute: typeof ApiPublicMercadopagoWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CheckoutRoute: CheckoutRoute,
+  GarantiaRoute: GarantiaRoute,
+  PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
+  PoliticaDeEntregaRoute: PoliticaDeEntregaRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
+  TrocasEDevolucoesRoute: TrocasEDevolucoesRoute,
+  PedidoOrderIdRoute: PedidoOrderIdRoute,
+  ApiPublicMercadopagoWebhookRoute: ApiPublicMercadopagoWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
