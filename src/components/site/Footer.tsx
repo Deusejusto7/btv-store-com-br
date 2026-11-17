@@ -58,7 +58,6 @@ export function Footer() {
                 {SITE.supportEmail}
               </a>
             </li>
-            <li>Segunda a sábado, 9h às 18h</li>
           </ul>
         </div>
       </div>

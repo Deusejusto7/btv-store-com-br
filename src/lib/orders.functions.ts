@@ -138,7 +138,8 @@ export const getOrder = createServerFn({ method: "GET" })
         .eq("id", data.orderId)
         .maybeSingle();
 
-    let { data: order } = await load();
+    const first = await load();
+    let order = first.data;
     if (!order) return null;
 
     if ((order.status === "pendente" || order.status === "confirmado") && mp.getMercadoPagoToken()) {
@@ -148,8 +149,8 @@ export const getOrder = createServerFn({ method: "GET" })
         const latest = approved ?? payments[0];
         if (latest) {
           await mp.applyPaymentToOrder(latest);
-          ({ data: order } = await load());
-          if (!order) return null;
+          const reloaded = await load();
+          if (reloaded.data) order = reloaded.data;
         }
       } catch (e) {
         console.error("Falha ao consultar pagamento", e);
